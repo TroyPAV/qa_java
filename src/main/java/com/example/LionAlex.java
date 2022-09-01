@@ -4,13 +4,14 @@ import java.util.List;
 
 public class LionAlex extends Lion{
 
-    private Predator predator;
+    //private Feline lion;
 
-    public LionAlex(Predator predator) {
-        this.predator = predator;
+    public LionAlex(String sex) throws Exception {
+        super("Самец");
     }
-    public LionAlex() {
-        super.hasMane = true;
+
+    public LionAlex(Feline feline) {
+        super(feline);
     }
 
     @Override
@@ -27,8 +28,6 @@ public class LionAlex extends Lion{
     }
 
     public List<String> getFood() throws Exception {
-        return predator.eatMeat();
+        return super.getFood();
     }
-
-
 }
