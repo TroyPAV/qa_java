@@ -4,31 +4,25 @@ import java.util.List;
 
 public class LionAlex extends Lion{
 
-    //private Feline lion;
-
-    public LionAlex(String sex) throws Exception {
-<span class="fc" id="L10">        super(&quot;Самец&quot;);</span>
-<span class="fc" id="L11">    }</span>
-
-    public LionAlex(Feline feline) {
-<span class="fc" id="L14">        super(feline);</span>
-<span class="fc" id="L15">    }</span>
+    public LionAlex(String sex, Feline lion) throws Exception {
+<span class="fc" id="L8">        super(&quot;Самец&quot;, lion);</span>
+<span class="fc" id="L9">    }</span>
 
     @Override
     public int getKittens() {
-<span class="fc" id="L19">        return 0;</span>
+<span class="fc" id="L13">        return 0;</span>
     }
 
     public List&lt;String&gt; getFriends() {
-<span class="fc" id="L23">        return List.of(&quot;Марти&quot;, &quot;Глория&quot;, &quot;Мелман&quot;);</span>
+<span class="fc" id="L17">        return List.of(&quot;Марти&quot;, &quot;Глория&quot;, &quot;Мелман&quot;);</span>
     }
 
     public String getPlaceOfLiving() {
-<span class="fc" id="L27">        return &quot;Нью-Йоркский зоопарк&quot;;</span>
+<span class="fc" id="L21">        return &quot;Нью-Йоркский зоопарк&quot;;</span>
     }
 
     public List&lt;String&gt; getFood() throws Exception {
-<span class="fc" id="L31">        return super.getFood();</span>
+<span class="fc" id="L25">        return super.getFood();</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

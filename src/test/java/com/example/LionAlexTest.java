@@ -19,21 +19,21 @@ public class LionAlexTest {
     //Тест метода doesHaveMane(), всегда возвращает true
     @Test
     public void doesHaveManeAlexReturnTrue() throws Exception {
-        LionAlex alex = new LionAlex("Самец");
+        LionAlex alex = new LionAlex("Самец", felineMock);
         Assert.assertTrue(alex.doesHaveMane());
     }
 
     //Тест метода getKittens(), всегда возвращает 0
     @Test
     public void getKittensAlexReturnZero() throws Exception {
-        LionAlex alex = new LionAlex("Самец");
+        LionAlex alex = new LionAlex("Самец", felineMock);
         Assert.assertEquals(0, alex.getKittens());
     }
 
     //Тест метода getFriends(), возвращает сисок друзей Алекса
     @Test
     public void getFriendsAlexReturnListOfFriends() throws Exception {
-        LionAlex alex = new LionAlex("Самец");
+        LionAlex alex = new LionAlex("Самец", felineMock);
         List<String> friends = Arrays.asList("Марти", "Глория", "Мелман");
         Assert.assertEquals(friends, alex.getFriends());
     }
@@ -41,7 +41,7 @@ public class LionAlexTest {
     //Тест метода getPlaceOfLiving(), возвращает "Нью-Йоркский зоопарк"
     @Test
     public void getPlaceOfLivingAlexReturnStringZoo() throws Exception {
-        LionAlex alex = new LionAlex("Самец");
+        LionAlex alex = new LionAlex("Самец", felineMock);
         String zoo = "Нью-Йоркский зоопарк";
         Assert.assertEquals(zoo, alex.getPlaceOfLiving());
     }
@@ -49,10 +49,9 @@ public class LionAlexTest {
     //Тест метода eatMeat(), возвращает список мясной еды ["Животные", "Птицы", "Рыба"]
     @Test
     public void getFoodForLionListOfMeat() throws Exception {
-        LionAlex alex = new LionAlex(felineMock);
+        LionAlex alex = new LionAlex("Самец", felineMock);
         List<String> meat = Arrays.asList("Животные", "Птицы", "Рыба");
         Mockito.when(alex.getFood()).thenReturn(meat);
         Assert.assertEquals(meat, alex.getFood());
     }
-
 }

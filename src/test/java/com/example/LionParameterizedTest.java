@@ -1,14 +1,24 @@
 package com.example;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
 @RunWith(Parameterized.class)
 public class LionParameterizedTest {
 
+    @Mock
+    Feline felineMock;
     private static String sex;
+
+    @Before
+    public void init() {
+        MockitoAnnotations.openMocks(this);
+    }
 
     public LionParameterizedTest(String sex) {
         this.sex = sex;
@@ -28,7 +38,7 @@ public class LionParameterizedTest {
     @Test
     public void doesHaveManeSexReturnBooleanOrException() {
         try {
-            Lion lion = new Lion(sex);
+            Lion lion = new Lion(sex, felineMock);
             if (sex.equals("Самец")) {
                 Assert.assertTrue(lion.hasMane);
             } else Assert.assertFalse(lion.hasMane);

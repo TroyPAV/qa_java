@@ -19,7 +19,7 @@ public class LionTest {
     //Тест метода getFood(), возвращает список мясной еды льва: ["Животные", "Птицы", "Рыба"]
     @Test
     public void getFoodForLionListOfMeat() throws Exception {
-        Lion lion = new Lion(felineMock);
+        Lion lion = new Lion("Самец", felineMock);
         List<String> meat = Arrays.asList("Животные", "Птицы", "Рыба");
         Mockito.when(lion.getFood()).thenReturn(meat);
         Assert.assertEquals(meat, lion.getFood());
@@ -27,8 +27,8 @@ public class LionTest {
 
     //Тест метода getKittens(), возвращает количество львят:1
     @Test
-    public void getKittensDefaultReturnOne() {
-        Lion lion = new Lion(felineMock);
+    public void getKittensDefaultReturnOne() throws Exception {
+        Lion lion = new Lion("Самец",felineMock);
         Mockito.when(lion.getKittens()).thenReturn(1);
         Assert.assertEquals(1, lion.getKittens());
     }
